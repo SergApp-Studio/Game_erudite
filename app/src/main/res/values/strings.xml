@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">Покажи свои знания</string>
+
+
+    <string name="StringMainActivity">Э р у д и т</string>
+    <string name="StringMainActivityTwo">проверь свои знания</string>
+
+
+    <string name="btnStartGame">Начать игру</string>
+    <string name="btnRecords">Рекорды</string>
+    <string name="btnExit">Выход</string>
+    <string name="btnBackInMA">меню</string>
+    <string name="btnStartGameSA">Начать</string>
+    <string name="btnCheck">Проверить</string>
+
+    <string name="tvCategorySA">Категория вопросов</string>
+    <string name="tvСomplexitySA">Сложность</string>
+    <string name="tvDialogMA">Покинуть игру ?</string>
+    <string name="tvDialogTA">Закончить игру ?</string>
+
+
+
+
+    <string name="tvScoreActivityMess">Для отображения рекордов сыграйте хотя бы одну игру</string>
+
+    <string name="dialogMA_OK">ДА</string>
+    <string name="dialogMA_NO">НЕТ</string>
+
+    <string name="dialogTA_OK">ДА</string>
+    <string name="dialogTA_NO">НЕТ</string>
+
+    <string name="tvDalogGameOver">Игра окончена</string>
+    <string name="tvDalogScore">Общий счет :</string>
+    <string name="dialogGO_OK">ОК</string>
+
+
+    <string name="tvMaxRecordsScorAct">Максимальный рекорд</string>
+    <string name="tvMaxRecords_0">0</string>
+
+
+</resources>

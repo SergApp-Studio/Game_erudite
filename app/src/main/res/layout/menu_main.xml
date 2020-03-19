@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
+
+    <TextView
+        android:id="@+id/tvMainActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="@string/StringMainActivity"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMainActivityTwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="serif"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="@string/StringMainActivityTwo"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSizeMATwo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainActivity" />
+
+    <Button
+        android:id="@+id/btnStartGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="80dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:text="@string/btnStartGame"
+        android:textColor="@color/colorTextButton"
+        android:textSize="@dimen/textButtonSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMainActivityTwo" />
+
+    <Button
+        android:id="@+id/btnRecords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:text="@string/btnRecords"
+        android:textColor="@color/colorTextButton"
+        android:textSize="@dimen/textButtonSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnStartGame" />
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="120dp"
+        android:layout_weight="1"
+        android:background="@drawable/button"
+        android:text="@string/btnExit"
+        android:textColor="@color/colorTextButton"
+        android:textSize="@dimen/textButtonSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRecords" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+

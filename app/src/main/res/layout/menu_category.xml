@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient">
+
+    <Button
+        android:id="@+id/btnBackInMA"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:text="@string/btnBackInMA"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextButton"
+        android:textSize="@dimen/textButtonSize2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCategorySA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="@string/tvCategorySA"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSizeSA"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackInMA"/>
+
+    <LinearLayout
+        android:id="@+id/llCategory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCategorySA">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imgBtnCategoryL"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:layout_marginStart="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_media_rew" />
+
+            <TextView
+                android:id="@+id/tvCategory"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/colorTextButton"
+                android:textSize="@dimen/textListView"
+                app:layout_constraintEnd_toStartOf="@+id/imgBtnCategoryR"
+                app:layout_constraintStart_toEndOf="@+id/imgBtnCategoryL"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imgBtnCategoryR"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_media_ff" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+    <TextView
+        android:id="@+id/tvСomplexitySA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="@string/tvСomplexitySA"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSizeSA"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llCategory"/>
+
+    <LinearLayout
+        android:id="@+id/llComplexity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvСomplexitySA">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/imgBtnComplexityL"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/ic_media_rew" />
+
+            <TextView
+                android:id="@+id/tvСomplexity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/colorTextButton"
+                android:textSize="@dimen/textListView"
+                app:layout_constraintEnd_toEndOf="@+id/imgBtnComplexityR"
+                app:layout_constraintEnd_toStartOf="@+id/imgBtnComplexityR"
+                app:layout_constraintStart_toEndOf="@+id/imgBtnComplexityL"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/imgBtnComplexityR"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:drawable/ic_media_ff" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/tvMessageComplexity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text=""
+        android:textColor="@color/colorMessageSA"
+        android:textSize="@dimen/textMessage"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llComplexity"/>
+
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="70dp"
+        android:background="@drawable/button"
+        android:text="@string/btnStartGameSA"
+        android:textColor="@color/colorTextButton"
+        android:textSize="@dimen/textButtonSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
