@@ -12,11 +12,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.game_erudite.R;
-import com.example.game_erudite.categoryes.Questions_BD;
+import com.example.game_erudite.Data.Questions_Loader;
 import com.example.game_erudite.constants.Constants;
 import com.example.game_erudite.dialogs.DialogTA;
 import com.example.game_erudite.dialogs.Dialog_GameOver;
@@ -47,7 +46,7 @@ public class GamePage extends AppCompatActivity
 
     private int user_score = 0;
 
-    private Questions_BD question;
+    private Questions_Loader question;
 
     private SharedPreferences sharPref_score;
 
@@ -71,7 +70,7 @@ public class GamePage extends AppCompatActivity
         setContentView(R.layout.page_game);
 
 
-        question = new Questions_BD();
+        question = new Questions_Loader();
         sharPref_score = getSharedPreferences(Constants.PREFERENCES_SCORE, Context.MODE_PRIVATE);
         initViews();
         initListeners();

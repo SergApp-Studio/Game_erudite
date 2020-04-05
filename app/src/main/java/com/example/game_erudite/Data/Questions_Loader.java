@@ -1,4 +1,4 @@
-package com.example.game_erudite.categoryes;
+package com.example.game_erudite.Data;
 
 import android.util.Log;
 
@@ -16,16 +16,16 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode
 @AllArgsConstructor
 
-public class Questions_BD {
+public class Questions_Loader {
 
     private ArrayList <String> questions = new ArrayList<>();
     private ArrayList <Integer> numbers_questions = new ArrayList<>();
-
-    private static final String MY_LOG = "MainMenu";
-
-    public Questions_BD() {
-    }
     Random random = new Random();
+
+
+    public Questions_Loader() {
+    }
+
 
 
 
@@ -54,7 +54,7 @@ public class Questions_BD {
         else if (numbers_questions.size() == questions.size()){
 
             string_question = Constants.END_QUESTION;
-            Log.d(MY_LOG, "вопросы закончились");
+            Log.d(Constants.MY_LOG, "вопросы закончились");
 
 
             //
@@ -70,7 +70,7 @@ public class Questions_BD {
 
                     if (numbers_questions.get(i) == temp)
                     {
-                        Log.d(MY_LOG, "зашло в ИФ " +numbers_questions.size() +" " + questions.size());
+                        Log.d(Constants.MY_LOG, "зашло в ИФ " +numbers_questions.size() +" " + questions.size());
                         break ;
                     }
                     else if (i == (numbers_questions.size()-1) && numbers_questions.get(i)!= temp)
@@ -91,7 +91,6 @@ public class Questions_BD {
 
 
     private void initQuestion(){
-
         // Вопрос*Ответ1*Ответ2*Ответ3*Ответ4*ОтветПравильный
         questions.add("Кто из президентов США написал свой собственный рассказ про Шерлока Холмса?&Джон Кеннеди&Франклин Рузвельт&Рональд Рейган&Дональд Трамп&Франклин Рузвельт");
         questions.add("Какую пошлину ввели в XII  веке в Англии для того чтобы заставить мужчин пойти на войну?&Налог на тунеядство&Налог на трусость&Налог на отсутствие сапог&Налог на животных&Налог на трусость");
@@ -111,8 +110,6 @@ public class Questions_BD {
         questions.add("Какое ежегодное мероприятие в Рио-де-Жанейро привлекает туристов со всего мира?&Карнавал&Экономический форум&Кинофестиваль&Военный парад&Карнавал");
         questions.add("Про кого С.Маршак написал стихотворение \"Усатый - полосатый\" ?&Про гусара&Про котенка&Про матроса&Про офицера&Про котенка");
         questions.add("Кого, предположительно, можно обнаружить в тихом омуте?&Бубей&Червей&Чертей&Угрей&Чертей");
-
-
     }
 
 
