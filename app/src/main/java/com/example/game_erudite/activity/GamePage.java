@@ -432,7 +432,11 @@ public class GamePage extends AppCompatActivity
     protected void onDestroy() {
         super.onDestroy();
         soundPool.release();
+
+        if(complexity.equals(Constants.COMPLEXITY_HARD)){
         asyncTimer.cancel(false);
+        }
+
         Log.d(Constants.MY_LOG, "Сработал onDestroy  Третей Активити");
     }
 
