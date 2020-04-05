@@ -14,6 +14,7 @@ import java.io.OutputStream;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
 
+
     private static String DB_PATH = "/data/data/com.example.game_erudite/databases/";
     private static String DB_NAME = "QuestionDB.db";
     private SQLiteDatabase myDataBase;
