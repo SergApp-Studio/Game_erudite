@@ -14,5 +14,9 @@ public class Constants {
     public static final String COMPLEXITY_HARD = "Сложно";
 
 
+    // количество вопросов в базе данных
+    public static final Integer TOTAL_ID = 18;
+
+
 
 }

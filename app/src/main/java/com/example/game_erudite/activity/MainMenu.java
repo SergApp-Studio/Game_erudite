@@ -13,9 +13,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.game_erudite.Data.DataBaseHelper;
 import com.example.game_erudite.R;
 import com.example.game_erudite.constants.Constants;
 import com.example.game_erudite.dialogs.DialogMA;
+
+import java.io.IOException;
 
 public class MainMenu extends AppCompatActivity
         implements View.OnClickListener,
@@ -29,6 +32,8 @@ public class MainMenu extends AppCompatActivity
     private SoundPool soundPool;
     private int spClicButton;
 
+    private DataBaseHelper dataBaseHelper;
+
 
 
 
@@ -38,12 +43,21 @@ public class MainMenu extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_main);
 
+        createDataBase();
         sharPref_score = getSharedPreferences(Constants.PREFERENCES_SCORE, Context.MODE_PRIVATE);
         initViews();
         initListeners();
         initSoundPool();
     }
 
+    private void createDataBase() {
+        dataBaseHelper = new DataBaseHelper(this);
+        try {
+            dataBaseHelper.createDataBase();
+        } catch (IOException ioe) {
+            throw new Error("Unable to create database");
+        }
+    }
 
 
     private void initViews() {

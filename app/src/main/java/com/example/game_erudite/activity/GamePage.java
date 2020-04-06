@@ -46,7 +46,7 @@ public class GamePage extends AppCompatActivity
 
     private int user_score = 0;
 
-    private Questions_Loader question;
+    private Questions_Loader questions_loader;
 
     private SharedPreferences sharPref_score;
 
@@ -64,13 +64,14 @@ public class GamePage extends AppCompatActivity
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.page_game);
 
 
-        question = new Questions_Loader();
+        questions_loader = new Questions_Loader();
         sharPref_score = getSharedPreferences(Constants.PREFERENCES_SCORE, Context.MODE_PRIVATE);
         initViews();
         initListeners();
@@ -166,7 +167,7 @@ public class GamePage extends AppCompatActivity
         //Получаем вопрос одной строкой и делим его на елементы
         List strings = new LinkedList();
         String string_quess;
-        string_quess = question.getQuestion();
+        string_quess = questions_loader.getQuestion(getApplicationContext());
 
         if(string_quess.equals(Constants.END_QUESTION)){
             btnTimer.setVisibility(View.INVISIBLE);
