@@ -8,14 +8,17 @@ public class Constants {
 
     public static final String PREFERENCES_SCORE = "preferences_score";
     public static final String SCORE = "score";
+    public static final String MAX_SERIES = "max_series";
 
 
-    public static final String COMPLEXITY_LIGHT = "Легко";
-    public static final String COMPLEXITY_HARD = "Сложно";
+
+    public static final String COMPLEXITY_LIGHT = "Легкая";
+    public static final String COMPLEXITY_MEDIUM = "Средняя";
+    public static final String COMPLEXITY_HARD = "Сложная";
 
 
     // количество вопросов в базе данных
-    public static final Integer TOTAL_ID = 18;
+    public static final Integer TOTAL_ID = 100;
 
 
 

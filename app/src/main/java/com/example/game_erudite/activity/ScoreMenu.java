@@ -22,12 +22,11 @@ public class ScoreMenu extends AppCompatActivity
         SoundPool.OnLoadCompleteListener{
 
     private Button btnBackInMA;
-    private TextView tvMaxRecords;
-    private String max_score;
-    private String all_score;
-    private String score;
-    private SharedPreferences sharPref_score;
 
+    private TextView tvMaxRecordsAmount;
+    private TextView tvMaxSeriesAmount;
+
+    private SharedPreferences sharPref_score;
     private SoundPool soundPool;
     private int spClicButton;
 
@@ -38,7 +37,9 @@ public class ScoreMenu extends AppCompatActivity
 
 
 
-        tvMaxRecords = findViewById(R.id.tvMaxRecords);
+        tvMaxRecordsAmount = findViewById(R.id.tvMaxRecordsAmount);
+        tvMaxSeriesAmount = findViewById(R.id.tvMaxSeriesAmount);
+
         btnBackInMA = findViewById(R.id.btnBackInMA);
         btnBackInMA.setOnClickListener(this);
         initSoundPool();
@@ -66,7 +67,10 @@ public class ScoreMenu extends AppCompatActivity
 
     private void setFildRecords(){
         String score = sharPref_score.getString(Constants.SCORE,"default");
-        tvMaxRecords.setText(score);
+        tvMaxRecordsAmount.setText(score);
+        String max_series = sharPref_score.getString(Constants.MAX_SERIES,"default");
+        tvMaxSeriesAmount.setText(max_series);
+
     }
 
 

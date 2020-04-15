@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.game_erudite.R;
@@ -40,11 +41,19 @@ public class GamePage extends AppCompatActivity
     private TextView tvQuestion;
     private TextView tvScore;
 
+    private ImageView ivLifes;
+
     private String userAnswer;
     private String answer_correct;
     private String category,complexity;
 
-    private int user_score = 0;
+    //максимальная серия правильных ответов подряд
+    private int max_series = 0;
+    //максимальная серия для легкого режима
+    int max_series_itsGame = 0;
+    //общий счет
+    private int gameScore = 0;
+    private int lifes = 3;
 
     private Questions_Loader questions_loader;
 
@@ -80,6 +89,7 @@ public class GamePage extends AppCompatActivity
         btnСheck.setEnabled(false);
         putDataFromSA();
         setComplexity();
+        setDefaultValues();
         setQuestion();
     }
 
@@ -89,6 +99,8 @@ public class GamePage extends AppCompatActivity
     private void initViews() {
         btnBack = findViewById(R.id.btnBack);
         btnСheck = findViewById(R.id.btnСheck);
+
+        ivLifes = findViewById(R.id.ivLifes);
 
         btnTimer = findViewById(R.id.btnTimer);
 
@@ -120,6 +132,11 @@ public class GamePage extends AppCompatActivity
         spGameOver = soundPool.load(this,R.raw.game_over,1);
         spTimeOut = soundPool.load(this,R.raw.time_out,1);
     }
+    private void setDefaultValues() {
+        if(complexity.equals(Constants.COMPLEXITY_LIGHT)){
+            ivLifes.setVisibility(View.VISIBLE);
+        }
+    }
 
 
     @Override
@@ -127,6 +144,8 @@ public class GamePage extends AppCompatActivity
         switch (v.getId()){
             case R.id.btnBack:
                 soundPool.play(spClicButton,1,1,1,0,1);
+                max_series = max_series_itsGame;
+                saveScoreInShPr();
                 createDialogExit();
                 break;
 
@@ -203,12 +222,11 @@ public class GamePage extends AppCompatActivity
     }
 
     private void setComplexity() {
-        if(complexity.equals(Constants.COMPLEXITY_LIGHT)){
-            btnTimer.setText("∞");
-        }
-        else {
+        if(complexity.equals(Constants.COMPLEXITY_HARD)) {
             btnTimer.setText("GO");
             startTimer();
+        }else {
+                btnTimer.setText("∞");
         }
     }
 
@@ -290,11 +308,57 @@ public class GamePage extends AppCompatActivity
             userScore_up();
             startAsync();
         }else {
-            soundPool.play(spGameOver,1,1,1,0,1);
-            setColorBtnIncorrect();
+            switch (complexity){
+                case Constants.COMPLEXITY_LIGHT:
+                    checkLifes();
+                    break;
+                case Constants.COMPLEXITY_MEDIUM:
+                    gameOver();
+                    break;
+                case Constants.COMPLEXITY_HARD:
+                    gameOver();
+                    break;
+            }
+
+        }
+    }
+
+
+    private void gameOver() {
+        soundPool.play(spGameOver,1,1,1,0,1);
+        setColorBtnIncorrect();
+        saveScoreInShPr();
+        // Логика для неправильоного ответа например вычисление баллов и т д.
+        createDialogGaOv();
+    }
+
+    private void checkLifes() {
+        //настройка счетчика правильных ответов
+        if(max_series > max_series_itsGame) {
+            max_series_itsGame = max_series;
+            max_series = 0;
+        }
+        if(lifes > 1){
+            //Работа с дизайном жизней
+            switch (lifes){
+                case 3:
+                    ivLifes.setImageResource(R.drawable.two_lifes);
+                    break;
+                case 2:
+                    ivLifes.setImageResource(R.drawable.one_lifes);
+                    break;
+            }
+
+            // логика отнятия жизни
             saveScoreInShPr();
-            // Логика для неправильоного ответа например вычисление баллов и т д.
-            createDialogGaOv();
+            lifes--;
+            setColorBtnIncorrect();
+            startAsync();
+        }else {
+            max_series = max_series_itsGame;
+            ivLifes.setImageResource(R.drawable.null_lifes);
+            Log.d(Constants.MY_LOG, "Жизни закончились");
+            gameOver();
         }
     }
 
@@ -310,8 +374,14 @@ public class GamePage extends AppCompatActivity
         }
     }
     private void userScore_up() {
-        user_score = Integer.parseInt(tvScore.getText().toString()) + 1;
-        tvScore.setText(String.valueOf(user_score));
+        double cof = 1.5;
+        gameScore++;
+        gameScore = (int)(  (max_series* cof) + gameScore);
+        tvScore.setText(String.valueOf(gameScore));
+        // подсчет правильных ответов подряд
+        max_series+=1;
+        max_series_itsGame = max_series;
+
     }
     public void startAsync() {
         Async_LoadQuestion myAsyncLoadQuestion = new Async_LoadQuestion();
@@ -371,9 +441,15 @@ public class GamePage extends AppCompatActivity
     private void saveScoreInShPr(){
 
         String score = sharPref_score.getString(Constants.SCORE,"default");
-        if (Integer.parseInt(score) < user_score) {
+        if (Integer.parseInt(score) < gameScore) {
             SharedPreferences.Editor editor = sharPref_score.edit();
-            editor.putString(Constants.SCORE, String.valueOf(user_score));
+            editor.putString(Constants.SCORE, String.valueOf(gameScore));
+            editor.apply();
+        }
+        String score_max_series = sharPref_score.getString(Constants.MAX_SERIES,"default");
+        if (Integer.parseInt(score_max_series) < max_series) {
+            SharedPreferences.Editor editor = sharPref_score.edit();
+            editor.putString(Constants.MAX_SERIES, String.valueOf(max_series));
             editor.apply();
         }
 
@@ -381,7 +457,7 @@ public class GamePage extends AppCompatActivity
     private void createDialogGaOv() {
         FragmentManager manager = getSupportFragmentManager();
         Dialog_GameOver dialog_gameOver = new Dialog_GameOver();
-        dialog_gameOver.setScore(String.valueOf(user_score));
+        dialog_gameOver.setScore(String.valueOf(max_series),String.valueOf(gameScore));
         dialog_gameOver.show(manager,"DialogGO");
     }
 
@@ -457,7 +533,7 @@ public class GamePage extends AppCompatActivity
     class Async_LoadQuestion extends AsyncTask<Void,Integer,Void> {
         @Override
         protected Void doInBackground(Void... voids) {
-            for (int i = 3; i >=1 ; i--) {
+            for (int i = 1; i >=1 ; i--) {
                 try {
                     TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
@@ -499,9 +575,9 @@ public class GamePage extends AppCompatActivity
         @Override
         protected void onProgressUpdate(Integer... values) {
             super.onProgressUpdate(values);
-            if (values[0]<=1){
-                btnTimer.setTextColor(getResources().getColor(R.color.color1to0));
-            }
+//            if (values[0]<=1){
+//                btnTimer.setTextColor(getResources().getColor(R.color.color1to0));
+//            }
             btnTimer.setText(String.valueOf(values[0]));
         }
 
@@ -510,6 +586,7 @@ public class GamePage extends AppCompatActivity
             super.onPostExecute(aVoid);
             setEnButton();
             soundPool.play(spTimeOut,1,1,1,0,1);
+            saveScoreInShPr();
             createDialogGaOv();
         }
 

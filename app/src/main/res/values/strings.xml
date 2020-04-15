@@ -30,12 +30,16 @@
     <string name="dialogTA_NO">НЕТ</string>
 
     <string name="tvDalogGameOver">Игра окончена</string>
+    <string name="tvDalogmaxScore">Ответов подряд :</string>
     <string name="tvDalogScore">Общий счет :</string>
     <string name="dialogGO_OK">ОК</string>
 
 
     <string name="tvMaxRecordsScorAct">Максимальный рекорд</string>
     <string name="tvMaxRecords_0">0</string>
+
+    <string name="tvMaxSeriesScorAct">Серия правильных ответов</string>
+    <string name="tvMaxSeries_0">0</string>
 
 
 </resources>

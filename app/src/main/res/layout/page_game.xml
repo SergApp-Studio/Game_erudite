@@ -5,10 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.GamePage"
-    android:background="@drawable/gradient">
+    android:background="@drawable/background">
 
 
-
+    <ImageView
+        android:id="@+id/ivLifes"
+        android:layout_width="68dp"
+        android:layout_height="89dp"
+        android:visibility="invisible"
+        android:src="@drawable/lifes_full"
+        app:layout_constraintEnd_toStartOf="@+id/tvScore"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnBack"
@@ -30,8 +39,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginStart="250dp"
+        android:background="@drawable/background_textview"
         android:text="0"
-        android:textColor="@color/colortvMonitorTA"
+        android:textColor="@color/colorScoreGP"
         android:textSize="@dimen/textMonitorTA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +50,8 @@
 
     <LinearLayout
         android:id="@+id/llMonitor"
-        android:layout_width="350dp"
-        android:layout_height="280dp"
+        android:layout_width="300dp"
+        android:layout_height="230dp"
         android:background="@drawable/llbackground"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
@@ -51,24 +61,26 @@
 
         <TextView
             android:id="@+id/tvQuestion"
-            android:layout_width="335dp"
-            android:layout_height="265dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:gravity="center"
-            android:textSize="@dimen/textMonitorTA"
             android:text=""
-            android:textColor="@color/colortvMonitorTA"/>
+            android:textColor="@color/colortvMonitorTA"
+            android:textSize="@dimen/textMonitorTA" />
 
     </LinearLayout>
 
 
     <Button
         android:id="@+id/btnAnswer1"
-        android:layout_width="335dp"
-        android:layout_height="60dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_marginTop="30dp"
         android:background="@drawable/button_static"
         android:text=""
+        android:textSize="@dimen/textButtonSize2"
         android:textColor="@color/colorTextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,11 +88,12 @@
 
     <Button
         android:id="@+id/btnAnswer2"
-        android:layout_width="335dp"
-        android:layout_height="60dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_static"
         android:text=""
+        android:textSize="@dimen/textButtonSize2"
         android:textColor="@color/colorTextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -88,11 +101,12 @@
 
     <Button
         android:id="@+id/btnAnswer3"
-        android:layout_width="335dp"
-        android:layout_height="60dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_static"
         android:text=""
+        android:textSize="@dimen/textButtonSize2"
         android:textColor="@color/colorTextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,11 +114,12 @@
 
     <Button
         android:id="@+id/btnAnswer4"
-        android:layout_width="335dp"
-        android:layout_height="60dp"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_static"
         android:text=""
+        android:textSize="@dimen/textButtonSize2"
         android:textColor="@color/colorTextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -112,11 +127,12 @@
 
     <Button
         android:id="@+id/btnСheck"
-        android:layout_width="150dp"
-        android:layout_height="40dp"
+        android:layout_width="125dp"
+        android:layout_height="30dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_static"
         android:text="@string/btnCheck"
+        android:textSize="@dimen/textButtonSize2"
         android:textColor="@color/colorTextButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -131,7 +147,7 @@
         android:text=""
         android:gravity="center"
         android:textAlignment="center"
-        android:textColor="@color/colorTextButton"
+        android:textColor="@color/colorTimer"
         android:textSize="@dimen/textButtonTimer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

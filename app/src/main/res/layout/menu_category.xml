@@ -2,9 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient">
+    android:background="@drawable/background">
 
     <Button
         android:id="@+id/btnBackInMA"
@@ -24,7 +25,8 @@
         android:id="@+id/tvCategorySA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/background_textview"
         android:text="@string/tvCategorySA"
         android:textColor="@color/colorTvText"
         android:textSize="@dimen/tvSizeSA"
@@ -39,7 +41,7 @@
 
     <LinearLayout
         android:id="@+id/llCategory"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="50dp"
@@ -65,9 +67,10 @@
                 android:id="@+id/tvCategory"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_textview"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/colorTextButton"
+                android:textColor="@color/colorTvText"
                 android:textSize="@dimen/textListView"
                 app:layout_constraintEnd_toStartOf="@+id/imgBtnCategoryR"
                 app:layout_constraintStart_toEndOf="@+id/imgBtnCategoryL"
@@ -96,7 +99,8 @@
         android:id="@+id/tvСomplexitySA"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/background_textview"
         android:text="@string/tvСomplexitySA"
         android:textColor="@color/colorTvText"
         android:textSize="@dimen/tvSizeSA"
@@ -111,7 +115,7 @@
 
     <LinearLayout
         android:id="@+id/llComplexity"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:orientation="horizontal"
@@ -137,9 +141,10 @@
                 android:id="@+id/tvСomplexity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/background_textview"
                 android:gravity="center"
                 android:text=""
-                android:textColor="@color/colorTextButton"
+                android:textColor="@color/colorTvText"
                 android:textSize="@dimen/textListView"
                 app:layout_constraintEnd_toEndOf="@+id/imgBtnComplexityR"
                 app:layout_constraintEnd_toStartOf="@+id/imgBtnComplexityR"
@@ -162,19 +167,21 @@
     </LinearLayout>
 
 
-
     <TextView
         android:id="@+id/tvMessageComplexity"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/background_textview"
+        android:fontFamily="sans-serif-black"
         android:text=""
         android:textColor="@color/colorMessageSA"
         android:textSize="@dimen/textMessage"
-        android:fontFamily="sans-serif-black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/llComplexity"/>
+        app:layout_constraintTop_toBottomOf="@+id/llComplexity" />
 
 
     <Button
@@ -183,14 +190,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="70dp"
         android:background="@drawable/button"
         android:text="@string/btnStartGameSA"
         android:textColor="@color/colorTextButton"
         android:textSize="@dimen/textButtonSize"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMessageComplexity" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

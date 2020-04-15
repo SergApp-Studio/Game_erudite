@@ -16,6 +16,19 @@
     </TextView>
 
     <TextView
+        android:id="@+id/tvScoreMax_Dialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40sp"
+        android:text="@string/tvDalogmaxScore"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorTextButton"
+        android:textSize="@dimen/textDialogGOscore"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center">
+    </TextView>
+
+    <TextView
         android:id="@+id/tvScore_Dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

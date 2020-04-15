@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0F2027</color>
-    <color name="colorPrimaryDark">#0F2027</color>
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#7DDA04</color>
 
 
     <color name="colorTvText">#B5B5CC</color>
-    <color name="colorTextButton">#B5B5CC</color>
+    <color name="colorTextButton">#050000</color>
     <color name="colorDivider">@null</color>
     <color name="colorListViewText">#0071fc</color>
     <color name="light_blue">#00E4FF</color>
     <color name="colorMessageSA">#80B5B5CC</color>
-    <color name="colortvMonitorTA">#B5B5CC</color>
+    <color name="colortvMonitorTA">#020000</color>
+    <color name="colorTimer">#B5B5CC</color>
+    <color name="colorScoreGP">#B5B5CC</color>
 
     <color name="colorDialog">#0F2027</color>
 

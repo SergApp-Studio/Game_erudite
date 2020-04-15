@@ -221,6 +221,10 @@ public class CategoryMenu extends AppCompatActivity
             tvMessageComplexity.setText(messageForComplexity.get(counterComplexity));
 
 
+            //Невидимая на момент тестирования
+        imgBtnCategoryR.setVisibility(View.INVISIBLE);
+        // ____________________________________________
+
     }
 
 
@@ -243,6 +247,7 @@ public class CategoryMenu extends AppCompatActivity
         complexityes = new ArrayList<>();
 
         complexityes.add(Constants.COMPLEXITY_LIGHT);
+        complexityes.add(Constants.COMPLEXITY_MEDIUM);
         complexityes.add(Constants.COMPLEXITY_HARD);
 
 
@@ -250,7 +255,7 @@ public class CategoryMenu extends AppCompatActivity
         messageForComplexity = new ArrayList<>();
 
         messageForComplexity.add("игра без учёта времени, количество возможных ошибок - 3 ");
-        //messageForComplexity.add("игра без учёта времени, права на ошибку нет ");
+        messageForComplexity.add("игра без учёта времени, права на ошибку нет ");
         messageForComplexity.add("игра с учётом времени,права на ошибку нет,на ответ есть 20 секунд");
     }
 

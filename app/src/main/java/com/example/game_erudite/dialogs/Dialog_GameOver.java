@@ -14,14 +14,16 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.game_erudite.R;
 
-import java.io.IOException;
+
 
 public  class Dialog_GameOver extends DialogFragment implements SoundPool.OnLoadCompleteListener{
 
 
+    private  TextView tvScoreMax_Dialog;
     private  TextView tvScore_Dialog;
     private Button btnOK;
-    private   String score;
+    private  String score_max_series;
+    private  String score;
 
     private SoundPool soundPool;
     private int spClicButton;
@@ -38,8 +40,11 @@ public  class Dialog_GameOver extends DialogFragment implements SoundPool.OnLoad
         View view = inflater.inflate(R.layout.dialog_gameover,null);
         builder.setView(view)
                 .setCancelable(true);
+
+        tvScoreMax_Dialog = view.findViewById(R.id.tvScoreMax_Dialog);
         tvScore_Dialog = view.findViewById(R.id.tvScore_Dialog);
-        tvScore_Dialog.setText(tvScore_Dialog.getText() +"     " + score);
+        tvScoreMax_Dialog.setText(tvScoreMax_Dialog.getText() +"     " + score_max_series);
+        tvScore_Dialog.setText(tvScore_Dialog.getText() +"     " + score );
         btnOK = view.findViewById(R.id.btnOK);
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,9 +61,9 @@ public  class Dialog_GameOver extends DialogFragment implements SoundPool.OnLoad
         spClicButton = soundPool.load(getContext(),R.raw.clic_button,1);
     }
 
-    public void setScore(String score){
-
-        this.score=score;
+    public void setScore(String score_max_series, String score){
+        this.score_max_series =score_max_series;
+        this.score = score;
     }
 
     @Override

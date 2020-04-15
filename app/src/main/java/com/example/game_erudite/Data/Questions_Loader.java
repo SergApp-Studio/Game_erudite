@@ -54,7 +54,7 @@ public class Questions_Loader {
         if (questions_id.size() == 0){
             // Случайным образом выбираем  id вопроса
             random_id = random.nextInt(Constants.TOTAL_ID)+1;
-            // Запрашиваем все данные
+            // Получаем вопрос
             cursor = database.rawQuery("SELECT * FROM questions", null);
             //Сравниваем данные и ищем совпадение со случайным id
             int cursor_now; // іd на котором в данный момент находится курсор
@@ -66,25 +66,22 @@ public class Questions_Loader {
                 }
             }
         }
-        //
-        // Проверяем не закончились ли вопросы , для избежания ошибок
-        //
         else if (questions_id.size() == Constants.TOTAL_ID){
+            //
+            // Проверяем не закончились ли вопросы , для избежания ошибок
+            //
             string_question = Constants.END_QUESTION;
             Log.d(Constants.MY_LOG, "вопросы закончились");
 
+        }else {
             //
             // Процес проверки одинаковых вопросов
             //
-        }else {
-
             while (string_question.equals("")){
-
                 // Случайным образом выбираем  id вопроса
                 random_id = random.nextInt(Constants.TOTAL_ID)+1;
                 for (int i = 0; i < questions_id.size(); i++)
                 {
-
                     if (questions_id.get(i) == random_id)
                     {
                         Log.d(Constants.MY_LOG, "Повтор, запрос нового id");
@@ -92,7 +89,7 @@ public class Questions_Loader {
                     }
                     else if (i == (questions_id.size()-1) && questions_id.get(i)!= random_id)
                     {
-                        // Запрашиваем все данные
+                        // Получаем вопрос
                         cursor = database.rawQuery("SELECT * FROM questions", null);
                         //Сравниваем данные и ищем совпадение со случайным id
                         int cursor_now; // іd на котором в данный момент находится курсор
@@ -105,13 +102,12 @@ public class Questions_Loader {
                         }
                     }
                 }
-
             }
-
         }
         // Возвращаем вопрос строкой
         return string_question ;
     }
+
 
 
 

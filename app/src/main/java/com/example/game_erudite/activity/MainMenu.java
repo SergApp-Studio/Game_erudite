@@ -141,6 +141,12 @@ public class MainMenu extends AppCompatActivity
             editor.apply();
         }
 
+        if(sharPref_score.getString(Constants.MAX_SERIES,"default").equals("default")) {
+            SharedPreferences.Editor editor = sharPref_score.edit();
+            editor.putString(Constants.MAX_SERIES, "0");
+            editor.apply();
+        }
+
 
         Log.d(Constants.MY_LOG, "Сработал onStart  Первой Активити");
     }

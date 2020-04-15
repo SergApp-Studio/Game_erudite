@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="tvSize">60sp</dimen>
-    <dimen name="tvSizeMATwo">30sp</dimen>
-    <dimen name="tvSizeSA">40sp</dimen>
-    <dimen name="textButtonSize">20sp</dimen>
+    <dimen name="tvSize">30sp</dimen>
+    <dimen name="tvSizeMATwo">20sp</dimen>
+
+    <dimen name="tvSizeSA">15sp</dimen>
+    <dimen name="textButtonSize">15sp</dimen>
     <dimen name="textButtonSize2">10sp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
-    <dimen name="textListView">25sp</dimen>
-    <dimen name="textMessage">15sp</dimen>
-    <dimen name="textMonitorTA">20sp</dimen>
+    <dimen name="textListView">10sp</dimen>
+    <dimen name="textMessage">10sp</dimen>
+    <dimen name="textMonitorTA">14sp</dimen>
     <dimen name="textDialogTA">25sp</dimen>
     <dimen name="textDialogGOscore">15sp</dimen>
     <dimen name="textMessageScore">25sp</dimen>
-    <dimen name="tvSizeScoreActivity">30sp</dimen>
+
+    <dimen name="tvSizeScoreActivity">15sp</dimen>
     <dimen name="textButtonTimer">40sp</dimen>
 </resources>
