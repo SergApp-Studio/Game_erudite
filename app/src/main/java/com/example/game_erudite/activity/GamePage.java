@@ -21,8 +21,10 @@ import com.example.game_erudite.constants.Constants;
 import com.example.game_erudite.dialogs.DialogTA;
 import com.example.game_erudite.dialogs.Dialog_GameOver;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class GamePage extends AppCompatActivity
@@ -189,6 +191,7 @@ public class GamePage extends AppCompatActivity
         string_quess = questions_loader.getQuestion(getApplicationContext());
 
         if(string_quess.equals(Constants.END_QUESTION)){
+            // Закончились вопросы в базе
             btnTimer.setVisibility(View.INVISIBLE);
             setEnButton();
             tvQuestion.setText(string_quess);
@@ -201,17 +204,13 @@ public class GamePage extends AppCompatActivity
                 strings.add(number); // заполняем Линкед лист
             }
 
+            // Визуальная настройка кнопок
             btnAnswer1.setBackground(this.getResources().getDrawable(R.drawable.button_static));
             btnAnswer2.setBackground(this.getResources().getDrawable(R.drawable.button_static));
             btnAnswer3.setBackground(this.getResources().getDrawable(R.drawable.button_static));
             btnAnswer4.setBackground(this.getResources().getDrawable(R.drawable.button_static));
 
-            tvQuestion.setText(String.valueOf(strings.get(0)));//в 0 ячейке всегда вопрос
-            btnAnswer1.setText(String.valueOf(strings.get(1)));
-            btnAnswer2.setText(String.valueOf(strings.get(2)));
-            btnAnswer3.setText(String.valueOf(strings.get(3)));
-            btnAnswer4.setText(String.valueOf(strings.get(4)));
-            answer_correct = String.valueOf(strings.get(5));// в 5 ячейке всегда правильный ответ
+            setQuesOnScrean(strings);
 
             btnAnswer1.setEnabled(true);
             btnAnswer2.setEnabled(true);
@@ -219,6 +218,71 @@ public class GamePage extends AppCompatActivity
             btnAnswer4.setEnabled(true);
         }
 
+    }
+
+    private void setQuesOnScrean(List strings) {
+        // Установка вопроса на экран, и вариантов ответа по кнопкам
+        tvQuestion.setText(String.valueOf(strings.get(0)));//в 0 ячейке всегда вопрос
+
+        //
+        //Алгоритм случайного расположения вариантов ответов по кнопкам
+        //
+        Random random = new Random();
+        int temp_number = 0;
+        int random_number = 0;
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        //  первый вариант ответа
+        random_number = random.nextInt(4)+1;
+        btnAnswer1.setText(String.valueOf(strings.get(random_number)));
+        numbers.add(random_number);
+
+        //  второй вариант ответа
+        while(temp_number == 0){
+            random_number = random.nextInt(4)+1;
+            for (int i = 0; i < numbers.size(); i++) {
+                if(numbers.get(i)==random_number){
+                    break;
+                }
+                else if (i == (numbers.size()-1) && numbers.get(i)!= random_number){
+                    temp_number = random_number;
+                    numbers.add(temp_number);
+                    btnAnswer2.setText(String.valueOf(strings.get(temp_number)));
+                }
+            }
+        }
+        // третий вариант ответа
+        temp_number = 0;
+        while(temp_number == 0){
+            random_number = random.nextInt(4)+1;
+            for (int i = 0; i < numbers.size(); i++) {
+                if(numbers.get(i)==random_number){
+                    break;
+                }
+                else if (i == (numbers.size()-1) && numbers.get(i)!= random_number){
+                    temp_number = random_number;
+                    numbers.add(temp_number);
+                    btnAnswer3.setText(String.valueOf(strings.get(temp_number)));
+                }
+            }
+        }
+
+        // четвертый вариант ответа
+        temp_number = 0;
+        while(temp_number == 0){
+            random_number = random.nextInt(4)+1;
+            for (int i = 0; i < numbers.size(); i++) {
+                if(numbers.get(i)==random_number){
+                    break;
+                }
+                else if (i == (numbers.size()-1) && numbers.get(i)!= random_number){
+                    temp_number = random_number;
+                    numbers.add(temp_number);
+                    btnAnswer4.setText(String.valueOf(strings.get(temp_number)));
+                }
+            }
+        }
+        answer_correct = String.valueOf(strings.get(5));// в 5 ячейке всегда правильный ответ
     }
 
     private void setComplexity() {

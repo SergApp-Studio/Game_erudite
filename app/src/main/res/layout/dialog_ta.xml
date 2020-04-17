@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tvDialogTA"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorTextButton"
+        android:textColor="@color/colorTVdialog"
         android:textSize="@dimen/textDialogTA"
         android:fontFamily="sans-serif-black"
         android:gravity="center">

@@ -14,8 +14,9 @@
     <color name="colortvMonitorTA">#020000</color>
     <color name="colorTimer">#B5B5CC</color>
     <color name="colorScoreGP">#B5B5CC</color>
+    <color name="colorTVdialog">#B5B5CC</color>
 
-    <color name="colorDialog">#0F2027</color>
+    <color name="colorDialog">#0A1114</color>
 
 
     <color name="color20to15">#008A02</color>

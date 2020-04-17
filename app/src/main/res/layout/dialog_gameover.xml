@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:text="@string/tvDalogGameOver"
         android:layout_marginTop="10dp"
-        android:textColor="@color/colorTextButton"
+        android:textColor="@color/colorTVdialog"
         android:textSize="@dimen/tvSizeSA"
         android:fontFamily="sans-serif-black"
         android:gravity="center">
@@ -22,7 +22,7 @@
         android:layout_marginStart="40sp"
         android:text="@string/tvDalogmaxScore"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorTextButton"
+        android:textColor="@color/colorTVdialog"
         android:textSize="@dimen/textDialogGOscore"
         android:fontFamily="sans-serif-black"
         android:gravity="center">
@@ -35,7 +35,7 @@
         android:layout_marginStart="40sp"
         android:text="@string/tvDalogScore"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorTextButton"
+        android:textColor="@color/colorTVdialog"
         android:textSize="@dimen/textDialogGOscore"
         android:fontFamily="sans-serif-black"
         android:gravity="center">

@@ -254,9 +254,9 @@ public class CategoryMenu extends AppCompatActivity
 
         messageForComplexity = new ArrayList<>();
 
-        messageForComplexity.add("игра без учёта времени, количество возможных ошибок - 3 ");
-        messageForComplexity.add("игра без учёта времени, права на ошибку нет ");
-        messageForComplexity.add("игра с учётом времени,права на ошибку нет,на ответ есть 20 секунд");
+        messageForComplexity.add("");
+        messageForComplexity.add("");
+        messageForComplexity.add("");
     }
 
 

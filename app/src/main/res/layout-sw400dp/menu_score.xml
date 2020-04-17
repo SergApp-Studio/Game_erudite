@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ScoreMenu"
+    android:background="@drawable/background">
+
+    <Button
+        android:id="@+id/btnBackInMA"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:text="@string/btnBackInMA"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextButton"
+        android:textSize="@dimen/textButtonSize2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tvMaxRecords"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/background_textview"
+        android:fontFamily="sans-serif-black"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="@string/tvMaxRecordsScorAct"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSizeScoreActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvMaxRecordsAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
+        android:background="@drawable/background_textview"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="@string/tvMaxRecords_0"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSizeScoreActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMaxRecords" />
+
+    <TextView
+        android:id="@+id/tvMaxSeries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
+        android:background="@drawable/background_textview"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="@string/tvMaxSeriesScorAct"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSizeScoreActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMaxRecordsAmount" />
+
+    <TextView
+        android:id="@+id/tvMaxSeriesAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-black"
+        android:background="@drawable/background_textview"
+        android:shadowColor="@color/colorTextButton"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="5"
+        android:text="@string/tvMaxSeries_0"
+        android:textColor="@color/colorTvText"
+        android:textSize="@dimen/tvSizeScoreActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMaxSeries" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

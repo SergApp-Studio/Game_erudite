@@ -53,7 +53,8 @@ public class Questions_Loader {
         //
         if (questions_id.size() == 0){
             // Случайным образом выбираем  id вопроса
-            random_id = random.nextInt(Constants.TOTAL_ID)+1;
+            random_id = 1;
+            //random_id = random.nextInt(Constants.TOTAL_ID)+1;
             // Получаем вопрос
             cursor = database.rawQuery("SELECT * FROM questions", null);
             //Сравниваем данные и ищем совпадение со случайным id

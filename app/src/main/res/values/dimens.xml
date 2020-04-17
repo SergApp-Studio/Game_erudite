@@ -2,19 +2,35 @@
 <resources>
     <dimen name="tvSize">30sp</dimen>
     <dimen name="tvSizeMATwo">20sp</dimen>
-
-    <dimen name="tvSizeSA">15sp</dimen>
+    <dimen name="tvSizeSA">20sp</dimen>
     <dimen name="textButtonSize">15sp</dimen>
-    <dimen name="textButtonSize2">10sp</dimen>
+    <dimen name="textButtonSizePG">15sp</dimen>
+    <dimen name="textButtonSize2">15sp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
-    <dimen name="textListView">10sp</dimen>
+    <dimen name="textListView">15sp</dimen>
     <dimen name="textMessage">10sp</dimen>
-    <dimen name="textMonitorTA">14sp</dimen>
+    <dimen name="textMonitorTA">20sp</dimen>
     <dimen name="textDialogTA">25sp</dimen>
     <dimen name="textDialogGOscore">15sp</dimen>
     <dimen name="textMessageScore">25sp</dimen>
-
-    <dimen name="tvSizeScoreActivity">15sp</dimen>
+    <dimen name="tvSizeScoreActivity">20sp</dimen>
     <dimen name="textButtonTimer">40sp</dimen>
+
+    <dimen name="tvSize_sw400dp">40sp</dimen>
+    <dimen name="tvSizeMATwo_sw400dp_sw400dp">20sp</dimen>
+    <dimen name="tvSizeSA_sw400dp">20sp</dimen>
+    <dimen name="textButtonSize_sw400dp">15sp</dimen>
+    <dimen name="textButtonSizePG_sw400dp">15sp</dimen>
+    <dimen name="textButtonSize2_sw400dp">15sp</dimen>
+    <dimen name="list_item_spacing_sw400dp">16dp</dimen>
+    <dimen name="list_item_spacing_half_sw400dp">8dp</dimen>
+    <dimen name="textListView_sw400dp">15sp</dimen>
+    <dimen name="textMessage_sw400dp">10sp</dimen>
+    <dimen name="textMonitorTA_sw400dp">20sp</dimen>
+    <dimen name="textDialogTA_sw400dp">25sp</dimen>
+    <dimen name="textDialogGOscore_sw400dp">15sp</dimen>
+    <dimen name="textMessageScore_sw400dp">25sp</dimen>
+    <dimen name="tvSizeScoreActivity_sw400dp">20sp</dimen>
+    <dimen name="textButtonTimer_sw400dp">40sp</dimen>
 </resources>
